@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "better-bilibili",
+    "version": "1.0.0",
+    "description": "哔哩哔哩网页端体验优化拓展",
+    "icons": {
+        "16": "icons/better-bilibili.png",
+        "48": "icons/better-bilibili.png",
+        "128": "icons/better-bilibili.png"
+      },
+      "action": {
+        "default_icon": "icons/better-bilibili.png",
+        "default_title": "哔哩哔哩网页端体验优化拓展",
+        "default_popup": "html/popup.html"
+      },
+      "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "permissions": [
+        "activeTab",
+        "tabs"
+      ],    
+      "content_scripts": [
+        {
+          "matches": ["https://www.bilibili.com/*"],
+          "js": ["scripts/clear-ad.js"]
+        }
+      ]
+}
